@@ -21,7 +21,7 @@ eye_cascade = cv.CascadeClassifier('../haarcascade_eye.xml')
 if face_cascade.empty() or eye_cascade.empty():
     sys.exit("ERREUR : Classificateurs non chargés")
 
-img = cv.imread('../images/test2.jpg')
+img = cv.imread('../images/obama.jpg')
 
 if img is None:
     sys.exit("ERREUR : Image non trouvée")

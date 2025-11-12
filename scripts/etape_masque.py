@@ -18,7 +18,7 @@ faces = face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5, min
 if len(faces) == 0:
     print("Aucun visage détecté.")
 else:
-    x,y,w,h = faces[0]  # on prend le premier visage
+    x,y,w,h = faces[0]  
     face = img[y:y+h, x:x+w].copy()
     face_gray = cv2.cvtColor(face, cv2.COLOR_BGR2GRAY)
 

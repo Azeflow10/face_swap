@@ -5,7 +5,7 @@ import numpy as np
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
 # Chargement de l'image contenant deux visages
-image = cv2.imread('images/brad-angelina.jpg') 
+image = cv2.imread('images/obama.jpg') 
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 # Détection des visages
