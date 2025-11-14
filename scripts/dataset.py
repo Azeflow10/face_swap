@@ -4,7 +4,7 @@ import numpy as np
 from PIL import Image
 import cv2
 
-# Haar cascade pour détecter les visages
+# Haar pour detecter les visages
 face_cascade = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
 
 
@@ -15,7 +15,7 @@ def _extract_face(filepath):
     """
 
     # Chargement
-    img_pil = Image.open(filepath).convert("L")  # niveaux de gris
+    img_pil = Image.open(filepath).convert("L") 
     img = np.array(img_pil)
 
     # Détection
@@ -56,7 +56,7 @@ def load_data(dataset_path):
 
         filepath = os.path.join(dataset_path, file)
         name = file.split(".")[0]        # subject03
-        subject_id = int(name.replace("subject", ""))  # 3
+        subject_id = int(name.replace("subject", "")) 
 
         try:
             face = _extract_face(filepath)

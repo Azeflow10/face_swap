@@ -3,7 +3,7 @@ import numpy as np
 import os
 from dataset import load_data
 
-# Définir le chemin du dataset (yalefaces à la racine du projet)
+# Définir le chemin du dataset
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATASET_DIR = os.path.join(BASE_DIR, "../yalefaces")
 
@@ -14,11 +14,11 @@ DATASET_DIR = os.path.join(BASE_DIR, "../yalefaces")
 target_h, target_w = train_X[0].shape
 train_X_resized = [cv2.resize(f, (target_w, target_h)) for f in train_X]
 
-# Création du modèle LBPH
+# Creation du modèle LBPH
 face_recognizer = cv2.face.LBPHFaceRecognizer_create()
 face_recognizer.train(train_X_resized, np.array(train_y))
 
-# Haar cascade pour la détection des visages
+# Haar cascade pour la edtection des visages
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
 # Ouverture de la webcam
@@ -54,10 +54,10 @@ while True:
 
     cv2.imshow("Reconnaissance faciale", frame)
 
-    # Sortie avec la touche 'q'
+    # Sortie avec la lettre q
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
-# Fermeture propre de la webcam et des fenêtres
+# Fermeture propre de la webcam et des fenetre
 cap.release()
 cv2.destroyAllWindows()
